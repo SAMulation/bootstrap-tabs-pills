@@ -23,6 +23,11 @@
     color: floralwhite;
 }
 
+.jumbotron a {
+    color: #fff;
+    font-weight: bold;
+}
+
 .address {
     font-size: 80%;
     margin: 0px;
