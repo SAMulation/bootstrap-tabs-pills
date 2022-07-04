@@ -229,11 +229,8 @@
                     <span class="carousel-control-next-icon"></span>
                 </a>
                 <div class="btn-group" id="carouselButton">
-                    <button class="btn btn-danger btn-sm" id="carousel-pause">
+                    <button class="btn btn-danger btn-sm" id="carousel-button-icon">
                         <span class="fa fa-pause"></span>
-                    </button>
-                    <button class="btn btn-danger btn-sm" id="carousel-play">
-                        <span class="fa fa-play"></span>
                     </button>
                 </div>
             </div>
@@ -287,13 +284,19 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#mycarousel').carousel({ interval: 2000 });
-            $('#carousel-pause').click(function() {
-                $('#mycarousel').carousel('pause');
-            });
-            $('#carousel-play').click(function() {
-                $('#mycarousel').carousel('cycle');
+        $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton span").removeClass('fa-pause');
+                    $("#carouselButton span").addClass('fa-play');
+                }
+                else if ($("#carouselButton span").hasClass('fa-play')){
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton span").removeClass('fa-play');
+                    $("#carouselButton span").addClass('fa-pause');                    
+                }
             });
         });
     </script>
