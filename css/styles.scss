@@ -75,6 +75,18 @@ body{
     z-index: 1;
 }
 
+.modal-header {
+    background: $background-dark;
+
+    h4, button.close {
+        color: floralwhite;
+    }
+}
+
+.modal-body {
+    background: $background-pale;
+}
+
 .col {
     padding-left: 0px;
     padding-right: 0px;
